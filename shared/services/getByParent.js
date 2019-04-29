@@ -22,19 +22,26 @@ module.exports = {
 
     await page.goto(data.url, { waitUntil: `networkidle0` });
 
-    await page.waitForSelector(data.parentName);
+    await page.waitForSelector(`.i-boletim-table-row`);
 
     // const content = await page.evaluate(() => {
     //   return document.querySelector(`.i-content`).innerHTML;
     // });
+    await page.waitForSelector(`.td-disciplina`);
+    await page.waitForSelector(`.js-nacs-open`);
+    await page.waitForSelector(`.js-faltas-open`);
+
     const content = await page.evaluate(() => {
-      const grabFromRow = (row, classname) => {
-        return row.querySelector(`td.${classname}`).innerText.trim();
+      
+        const grabFromRow = (row, classname) => {
+        return row.querySelector(`${classname}`).innerText.trim();
       };
+
+      const rowSelector = `tr.i-boletim-table-row`;
 
       const data = [];
 
-      const reportRows = document.querySelectorAll(`tr.i-boletim-table-row`);
+      const reportRows = document.querySelectorAll(rowSelector);
 
       for (const tr of reportRows) {
         data.push({
@@ -48,7 +55,7 @@ module.exports = {
     });
 
     console.log(content);
-    browser.close();
+    // browser.close();
   },
 
   getByParentPDF: async function(data) {

@@ -1,6 +1,6 @@
 # webscrapper-college-report-card
 ## EN
-Webscrapper desenvolvido para coletar as notas das disciplinas disponibilizadas no portal da faculdade.
+Webscrapper developed to collect the school grades of the disciplines made available on the college portal.
 
 ### Install and run
 Liferule
@@ -12,13 +12,12 @@ In index.js, define in consts your login and password as strings.
  const user = "YOUR_USER"
  const password = "YOUR_PASSWORD"
 ```
-And run /o/
+To run
 ```
 npm start
 ```
 ## PT-BR
-
-Webscrapper developed to collect the school grades of the disciplines made available on the college portal.
+Webscrapper desenvolvido para coletar as notas das disciplinas disponibilizadas no portal da faculdade.
 
 ### Instalação e execução
 Lei da vida
@@ -30,7 +29,7 @@ No arquivo index.js, mude os valores das consts user e password para seu respect
  const user = "SEU_USUÁRIO"
  const password = "SUA_SENHA"
 ```
-E executar /o/
+Para executar
 ```
 npm start
 ```
