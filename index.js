@@ -3,8 +3,8 @@ const gf = require('./shared/services/getByFields');
 
 (async () => {
   const data = {
-    user: `78436`,
-    password: `ragnarok1`,
+    user: `YOUR_LOGIN`,
+    password: `YOUR_PASSWORD`,
     url: `https://www2.fiap.com.br/Aluno/Boletim`,
     urlLogin: `https://www2.fiap.com.br/`,
     parentName: `.i-content`
