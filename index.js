@@ -1,4 +1,4 @@
-const gp = require('./shared/services/getByParent');
+const { getByParentJSON, getByParentPDF, grades } = require('./shared/services/getByParent');
 const gf = require('./shared/services/getByFields');
 
 (async () => {
@@ -9,5 +9,11 @@ const gf = require('./shared/services/getByFields');
     urlLogin: `https://www2.fiap.com.br/`,
     parentName: `.i-content`
   };
-  await gp.getByParentJSON(data);
+
+  // To get JSON
+  await getByParentJSON(data);
+  // To get grade (with navigation)
+  await grades(data.user, data.password);
+  // To get PDF
+  await getByParentPDF(data);
 })();

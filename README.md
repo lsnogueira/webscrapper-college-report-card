@@ -33,3 +33,5 @@ Para executar
 ```
 npm start
 ```
+
+Thanks [@vitorpiovezam](https://github.com/vitorpiovezam)
