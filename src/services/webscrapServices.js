@@ -1,5 +1,5 @@
 module.exports = { getByParentJSON, getByParentPDF, grades };
-const { getDate, createNavigation } = require('./generalServices');
+const { getDate, createNavigation, objTransform } = require('./generalServices');
 // showBrowser as createNavigation() parameter
 const showBrowser = {
 	headless: false,
@@ -33,10 +33,14 @@ async function getByParentJSON(data) {
 		const faultsContent = document.querySelectorAll('tr.i-boletim-table-row td:nth-child(5)');
 		const faults = [].map.call(faultsContent, a => a.innerText);
 
-		const data = {
-			subjects: subjects,
-			faults: faults,
-		};
+		const data = [];
+
+		for (let i = 0; i < subjects.length; i++) {
+			data.push({
+				disciplinaa: subjects[i],
+				faltas: faults[i],
+			});
+		}
 
 		return data;
 	});

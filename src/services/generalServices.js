@@ -1,4 +1,4 @@
-module.exports = { getDate, createNavigation };
+module.exports = { getDate, createNavigation, objTransform };
 const puppeteer = require(`puppeteer`);
 
 function getDate() {
@@ -22,4 +22,15 @@ async function createNavigation(obj) {
 	param = obj ? obj : {};
 	browser = await puppeteer.launch(param);
 	page = await browser.newPage();
+}
+
+function objTransform(param, param2) {
+	const obj = [];
+	param.map(res, index => {
+		obj.push({
+			subjects: res,
+			faults: param2[index],
+		});
+	});
+	return obj;
 }

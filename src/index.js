@@ -1,9 +1,9 @@
-const { getByParentJSON, getByParentPDF, grades } = require('./shared/services/webscrapServices');
+const { getByParentJSON, getByParentPDF, grades } = require('./services/webscrapServices');
 
 (async () => {
   const data = {
-    user: `YOUR_LOGIN`,
-    password: `YOUR_PASSWORD`,
+    user: `78436`,
+    password: `ragnarok1`,
     url: `https://www2.fiap.com.br/Aluno/Boletim`,
     urlLogin: `https://www2.fiap.com.br/`,
     parentName: `.i-content`
@@ -11,6 +11,7 @@ const { getByParentJSON, getByParentPDF, grades } = require('./shared/services/w
 
   // To get JSON
   await getByParentJSON(data);
+  return;
   // To get grade (with navigation)
   await grades(data.user, data.password);
   // To get PDF
