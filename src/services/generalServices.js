@@ -2,11 +2,12 @@ module.exports = { getDate, createNavigation };
 const puppeteer = require(`puppeteer`);
 
 function getDate() {
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth() + 1; // janeiro = 0
+	const today = new Date();
 
-	var yyyy = today.getFullYear();
+	let dd = today.getDate();
+	let mm = today.getMonth() + 1; // janeiro = 0
+	const yyyy = today.getFullYear();
+
 	if (dd < 10) {
 		dd = '0' + dd;
 	}

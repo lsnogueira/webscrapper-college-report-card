@@ -6,12 +6,6 @@ const showBrowser = {
 	args: [`--full-screen`],
 };
 
-class getByParent {
-	constructor() {
-		createNavigation();
-	}
-}
-
 async function getByParentJSON(data) {
 	await createNavigation();
 	await page.goto(data.urlLogin, { waitUntil: `networkidle2` });
